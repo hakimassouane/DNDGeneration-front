@@ -18,6 +18,9 @@
 .env.test.local
 .env.production.local
 
+# elasticbeans talk
+.elasticbeanstalk
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
