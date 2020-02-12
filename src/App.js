@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import './bootstrap.min.css'
+import { default as Navbar } from './Components/Navbar';
 
 const urlLocal = '/users/0';
 
@@ -46,6 +47,7 @@ class App extends Component {
     } else {
       return (
         <div>
+          <Navbar></Navbar>
           <p>User name : {this.state.user.userName}</p>
           <p>Id : {this.state.user.userId}</p>
         </div>
