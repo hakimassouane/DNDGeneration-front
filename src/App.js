@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import './App.css'
+import './bootstrap.min.css'
+
+import Button from 'react-bootstrap/Button';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 const urlLocal = '/users/0';
 
@@ -19,6 +23,7 @@ class App extends Component {
       .then(res => res.json())
       .then(
         (result) => {
+          console.log(result);
           this.setState({
             isLoaded: true,
             user: result
