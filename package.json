@@ -2,7 +2,7 @@
   "name": "dndgeneration-front",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://dndgeneration-env.yfqbykmgid.eu-west-3.elasticbeanstalk.com/",
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
@@ -12,6 +12,8 @@
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
+    "react-router-dom": "^5.1.2",
+    "react-router-dynamic-breadcrumbs": "^2.2.0",
     "react-scripts": "3.3.1"
   },
   "scripts": {
