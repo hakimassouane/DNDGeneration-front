@@ -1,70 +1,28 @@
 import React, { Component } from "react";
-import { Table } from 'react-bootstrap';
-import BreadcrumbComponent from '../GeneralComponents/Breadcrumb/BreadcrumbComponent'
+import ListComponent from '../GeneralComponents/ListComponent/listComponent'
 
-const urlLocal = '/backgrounds';
-
-class BackgroundListComponent extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          error: null,
-          isLoaded: false,
-          backgrounds: []
-        };
+class ItemListComponent extends Component {
+    renderTableData(backgrounds) {
+        return (backgrounds || {}).map((background, index) => {
+            const { name, source, page } = background
+            return (
+               <tr key={name}>
+                  <td>{name}</td>
+                  <td>{source}</td>
+                  <td>{page}</td>
+               </tr>
+            )
+         })
     }
 
-    componentDidMount () {
-        fetch(urlLocal)
-          .then(res => res.json())
-          .then(
-            (result) => {
-                this.setState({
-                    isLoaded: true,
-                    backgrounds: result
-                });
-            },
-            (error) => {
-                this.setState({
-                    isLoaded: true,
-                    error
-                });
-            }
-          )
-      }
+    render() {
+        const tableHeadFields = ['Name', 'Source', 'Page number'];
 
-    renderTableData() {
-        return this.state.backgrounds.map((background, index) => {
-           const { name, source, page } = background
-           return (
-              <tr key={name}>
-                 <td>{name}</td>
-                 <td>{source}</td>
-                 <td>{page}</td>
-              </tr>
-           )
-        })
-     }
-
-    render () {
         return (
-            <div>
-                <BreadcrumbComponent></BreadcrumbComponent>
-                <Table striped bordered hover size="sm">
-                    <thead>
-                        <tr>
-                        <th>Name</th>
-                        <th>Source</th>
-                        <th>Page n°</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.renderTableData()}
-                    </tbody>
-                </Table>
-            </div>
-         )
+            <ListComponent urlToFetch='/backgrounds' tableHeadFields={tableHeadFields} renderTableData={this.renderTableData}>
+            </ListComponent>
+        )
     }
 }
 
-export default BackgroundListComponent
+export default ItemListComponent
