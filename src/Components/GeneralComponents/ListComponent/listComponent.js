@@ -42,7 +42,7 @@ class listComponent extends Component {
         return (
             <div>
                 <BreadcrumbComponent></BreadcrumbComponent>
-                <Table striped bordered hover size="sm">
+                <Table responsive striped bordered hover size="sm">
                     <tbody>
                     <tr>{this.renderTableHeader()}</tr>
                     {this.props.renderTableData(this.state.data)}
