@@ -6,26 +6,32 @@ import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 class SignUpFormComponent extends Component {
     constructor(props) {
         super(props);
-        this.onChangeName = this.onChangeName.bind(this);
+        /*this.onChangeName = this.onChangeName.bind(this);
         this.onChangeEmail = this.onChangeEmail.bind(this);
         this.onChangePassword = this.onChangePassword.bind(this);
-        this.onChangeConfPassword = this.onChangeConfPassword.bind(this);
+        this.onChangeConfPassword = this.onChangeConfPassword.bind(this);*/
+        this.onChange = this.onChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.disabledButton = this.disabledButton.bind(this);
 
         this.state = {
             name: '',
             email: '',
             password: '',
             confpassword: '',
-            successful: false,
-            message: ''
+            /*successful: false,
+            message: ''*/
+            callback: '',
+            error: ''
         }
+       
     }
 
-    onChangeName(e) {
+    /*onChangeName(e) {
         this.setState({
             name: e.target.value
         });
+        console.log(e.target.name)
     }
 
     onChangeEmail(e) {
@@ -44,16 +50,40 @@ class SignUpFormComponent extends Component {
         this.setState({
             confpassword: e.target.value
         });
-    }
+    };*/
+    
+    onChange(e) {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    };
 
     async handleSubmit(event) {
-        event.preventDefault();        
-        const response = await UserService.createUser({ 
+        event.preventDefault();
+        const createUser = {
             name: this.state.name,
             email: this.state.email,
             password: this.state.password
-        });
-        console.log(response);
+        }
+        try {
+            const response = await UserService.createUser(createUser);
+            if (response.data.error) {
+                this.setState({error: response.data.error.message});
+            } else {
+                this.setState({callback: 'Your account has been create with success'})
+                console.log(response);
+            }
+        } catch (error) {
+            this.setState({error: error.message})
+        }
+    }
+
+    disabledButton(e) {
+        const _this = this.state;
+        if (_this.email.length > 0 && _this.password.length > 0 && _this.name.length > 0 && _this.password === _this.confpassword && _this.email.match(new RegExp('\\@gmail.com|\\@yahoo.com|\\@hotmail.com|\\@hotmail.fr', 'g'))) {
+            return false;
+        }
+        return true;
     }
 
     render() {
@@ -69,8 +99,9 @@ class SignUpFormComponent extends Component {
                         <Form.Control 
                         type="email"
                         placeholder="Entrez votre adresse email"
+                        name="email"
                         value={this.state.email}
-                        onChange={this.onChangeEmail}
+                        onChange={this.onChange}
                         />
                     </Form.Group>
 
@@ -79,8 +110,9 @@ class SignUpFormComponent extends Component {
                         <Form.Control 
                         type="text" 
                         placeholder="Pseudo"
+                        name= "name"
                         value={this.state.name}
-                        onChange={this.onChangeName}
+                        onChange={this.onChange}
                         />
                     </Form.Group>
 
@@ -89,8 +121,9 @@ class SignUpFormComponent extends Component {
                         <Form.Control 
                         type="password"
                         placeholder="Mot de passe"
+                        name="password"
                         value={this.state.password}
-                        onChange={this.onChangePassword}
+                        onChange={this.onChange}
                         />
                     </Form.Group>
                     
@@ -99,14 +132,15 @@ class SignUpFormComponent extends Component {
                         <Form.Control
                         type="password"
                         placeholder="Mot de passe"
+                        name="confpassword"
                         value={this.state.confpassword}
-                        onChange={this.onChangeConfPassword}
+                        onChange={this.onChange}
                         />
                     </Form.Group>
                     <Form.Group controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="J'ai lu et j'accepte les Conditions générales d'utilisation" />
                     </Form.Group>
-                    <Button type="submit" className="btn btn-block btn-danger">S'inscrire</Button>
+                    <Button type="submit" className="btn btn-block btn-danger" disabled={this.disabledButton()}>S'inscrire</Button>
                 </Form>
             </Container>
         )

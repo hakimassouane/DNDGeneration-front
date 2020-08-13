@@ -4,6 +4,7 @@ import { Link} from 'react-router-dom';
 
 class NavbarDND extends Component {
     render() {
+      const islogged = false;
         return (
           <Navbar bg="dark" variant="dark" expand="lg">
             <Navbar.Brand href="/">DND Generation</Navbar.Brand>
@@ -17,6 +18,11 @@ class NavbarDND extends Component {
               <Col><Nav.Link href='/spells'>Spells</Nav.Link></Col>
             </Row>
             </Nav>
+            { islogged ? 
+              <Form inline>
+                <Button variant="info">déconnexion</Button>
+              </Form>
+            : 
             <Form inline>
               <Link to="/signup">
                 <Button variant="outline-info" className="mr-sm-2" >Sign up</Button>
@@ -24,7 +30,8 @@ class NavbarDND extends Component {
               <Link to="/signin">
                 <Button variant="info">Sign in</Button>
               </Link>
-            </Form>
+            </Form> 
+            }
           </Navbar>
         )
     }
