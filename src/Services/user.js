@@ -9,7 +9,7 @@ const UserService = {
         }
         const valideEmailAndPasswod = this.validEmailAndPassword(email, password);
         if (valideEmailAndPasswod) {*/
-            return await Api.getInstance().post('/users', { email, password });
+            return await Api.getInstance().post('/users/login', { email, password });
        /* }
         throw new Error('Email and password is required!');*/
     },
@@ -21,7 +21,7 @@ const UserService = {
         }
         const valideEmailType = this.validEmailType(user.email);
         if (valideEmailType) {*/
-            return await Api.getInstance().post('/users', user);
+            return await Api.getInstance().post('/users/register', user);
         /*}
         throw new Error('Email is not valid');*/
     },
