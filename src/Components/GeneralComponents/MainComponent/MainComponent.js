@@ -7,7 +7,9 @@ import RaceListComponent from "../../RaceComponents/raceListComponent";
 import SpellListComponent from "../../SpellComponents/spellListComponent";
 import SignInFormComponent from "../../SignInComponents/SignInFormComponent";
 import SignUpFormComponent from "../../SignUpComponents/SignUpFormComponent";
+import BackgroundFormComponent from "../../BackgroundComponents/backgroundFormComponent";
 import { Route} from 'react-router-dom';
+
 
 
 class MainComponent extends Component {
@@ -22,6 +24,7 @@ class MainComponent extends Component {
                 <Route path="/spells" component={SpellListComponent}></Route>
                 <Route path="/signup" component={SignUpFormComponent}></Route>
                 <Route path="/signin" component={SignInFormComponent}></Route>
+                <Route path="/createbackground" component={BackgroundFormComponent}></Route>
             </div>
           )
       }

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ListComponent from '../GeneralComponents/ListComponent/listComponent'
+import { Button, Form, Nav, Navbar, Row, Col, Container } from 'react-bootstrap';
+import { Link} from 'react-router-dom';
 
 class BackgroundListComponent extends Component {
     renderTableData(backgrounds) {
@@ -20,8 +22,19 @@ class BackgroundListComponent extends Component {
         const tableHeadFields = ['Name', 'Skill proficiencies', 'Source', 'Page number'];
 
         return (
-            <ListComponent urlToFetch='/backgrounds' tableHeadFields={tableHeadFields} renderTableData={this.renderTableData}>
-            </ListComponent>
+            <div>
+                <ListComponent urlToFetch='/backgrounds' tableHeadFields={tableHeadFields} renderTableData={this.renderTableData}>
+                </ListComponent>
+                <Container fluid id="buttoncreate">
+                    <Row>
+                        <Col>
+                            <Link to="/createbackground">
+                                <Button>Create background</Button>
+                            </Link>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         )
     }
 }
