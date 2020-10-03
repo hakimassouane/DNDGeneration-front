@@ -28,7 +28,7 @@ class BackgroundListComponent extends Component {
                 <Container fluid id="buttoncreate">
                     <Row>
                         <Col>
-                            <Link to="/createbackground">
+                            <Link to="/createBackground">
                                 <Button>Create background</Button>
                             </Link>
                         </Col>

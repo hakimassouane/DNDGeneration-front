@@ -28,7 +28,7 @@ class CharacterListComponent extends Component {
                 <Container fluid id="buttoncreate">
                     <Row>
                         <Col>
-                            <Link to="/createcharacter">
+                            <Link to="/createCharacter">
                                 <Button>Create a character</Button>
                             </Link>
                         </Col>
