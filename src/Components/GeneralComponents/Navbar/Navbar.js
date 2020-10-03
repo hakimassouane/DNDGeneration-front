@@ -16,6 +16,7 @@ class NavbarDND extends Component {
               <Col><Nav.Link href='/items'>Items</Nav.Link></Col>
               <Col><Nav.Link href='/races'>Races</Nav.Link></Col>
               <Col><Nav.Link href='/spells'>Spells</Nav.Link></Col>
+              <Col><Nav.Link href='/characters'>Characters</Nav.Link></Col>
             </Row>
             </Nav>
             { islogged ? 

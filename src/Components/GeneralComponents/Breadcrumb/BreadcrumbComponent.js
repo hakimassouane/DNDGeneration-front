@@ -8,7 +8,8 @@ const routes = {
     '/feats': 'Feats',
     '/items': 'Items',
     '/races': 'Races',
-    '/spells': 'Spells'
+    '/spells': 'Spells',
+    '/characters': 'Characters'
 }
 
 class BreadcrumbComponent extends Component {
