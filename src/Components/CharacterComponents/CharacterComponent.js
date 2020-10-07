@@ -23,12 +23,10 @@ class CharacterFormComponent extends Component {
     }
 
     raceData(data) {
-        console.log("raceData", data)
         this.setState({raceData: data})
     }
 
     classeData(data) {
-        console.log("classeData", data)
         this.setState({classeData: data})
     }
 
