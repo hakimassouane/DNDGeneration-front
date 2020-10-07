@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ListComponent from '../GeneralComponents/ListComponent/listComponent'
-import { Button, Form, Nav, Navbar, Row, Col, Container } from 'react-bootstrap';
+import { Button, Row, Col, Container } from 'react-bootstrap';
 import { Link} from 'react-router-dom';
 
 class BackgroundListComponent extends Component {
