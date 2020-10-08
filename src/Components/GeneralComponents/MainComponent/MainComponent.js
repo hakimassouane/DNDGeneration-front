@@ -10,7 +10,9 @@ import SignInFormComponent from "../../SignInComponents/SignInFormComponent";
 import SignUpFormComponent from "../../SignUpComponents/SignUpFormComponent";
 import BackgroundFormComponent from "../../BackgroundComponents/backgroundFormComponent";
 import CharacterFormComponent from "../../CharacterComponents/CharacterComponent"
+import CharactersheetComponent from "../../CharacterComponents/CharactersheetComponent";
 import { Route} from 'react-router-dom';
+
 
 
 
@@ -25,6 +27,7 @@ class MainComponent extends Component {
                 <Route path="/races" component={RaceListComponent}></Route>
                 <Route path="/spells" component={SpellListComponent}></Route>
                 <Route path="/characters" component={CharacterListComponent}></Route>
+                <Route path="/character" component={CharactersheetComponent}></Route>
                 <Route path="/signup" component={SignUpFormComponent}></Route>
                 <Route path="/signin" component={SignInFormComponent}></Route>
                 <Route path="/createBackground" component={BackgroundFormComponent}></Route>

@@ -32,6 +32,11 @@ class CharacterListComponent extends Component {
                                 <Button>Create a character</Button>
                             </Link>
                         </Col>
+                        <Col>
+                            <Link to="/character">
+                                <Button>charactersheet</Button>
+                            </Link>
+                        </Col>
                     </Row>
                 </Container>
             </div>
