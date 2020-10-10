@@ -7,9 +7,10 @@ class CharacterListComponent extends Component {
     renderTableData(characters) {
         return (characters || {}).map((character) => {
             const { _id, characterName, level, race, classe } = character
+            /*<td><a href={"/characters/" + _id}>{characterName}</a></td> mettre un link to vers la page fiche personnage et envoyer _id en argument*/
             return (
                <tr key={characterName}>
-                  <td><a href={"/characters/" + _id}>{characterName}</a></td>
+                  <td><Link to={{pathname: "/character", state: {id: _id} }}><a href={"/characters/" + _id}>{characterName}</a></Link></td>
                   <td>{level}</td>
                   <td>{race}</td>
                   <td>{classe}</td>
@@ -30,11 +31,6 @@ class CharacterListComponent extends Component {
                         <Col>
                             <Link to="/createCharacter">
                                 <Button>Create a character</Button>
-                            </Link>
-                        </Col>
-                        <Col>
-                            <Link to="/character">
-                                <Button>charactersheet</Button>
                             </Link>
                         </Col>
                     </Row>
