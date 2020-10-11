@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
-import { createPortal } from 'react-dom';
 import Select from 'react-select'
 import RaceService from '../../Services/race';
 
