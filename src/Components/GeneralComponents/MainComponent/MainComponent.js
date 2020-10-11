@@ -12,6 +12,7 @@ import BackgroundFormComponent from "../../BackgroundComponents/backgroundFormCo
 import CharacterFormComponent from "../../CharacterComponents/CharacterComponent"
 import CharactersheetComponent from "../../CharacterComponents/CharactersheetComponent";
 import FeatFormComponent from "../../FeatComponents/featFormComponent"
+import RaceFormComponent from "../../RaceComponents/raceFormComponent"
 import { Route} from 'react-router-dom';
 
 
@@ -34,6 +35,7 @@ class MainComponent extends Component {
                 <Route path="/createBackground" component={BackgroundFormComponent}></Route>
                 <Route path="/createCharacter" component={CharacterFormComponent}></Route>
                 <Route path="/createFeat" component={FeatFormComponent}></Route>
+                <Route path="/createRace" component={RaceFormComponent}></Route>
             </div>
           )
       }

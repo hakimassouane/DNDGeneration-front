@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ListComponent from '../GeneralComponents/ListComponent/listComponent'
+import { Button, Row, Col, Container } from 'react-bootstrap';
+import { Link} from 'react-router-dom';
 
 class RaceListComponent extends Component {
     renderTableData(races) {
@@ -19,8 +21,20 @@ class RaceListComponent extends Component {
         const tableHeadFields = ['Name', 'Source', 'Page number'];
 
         return (
-            <ListComponent urlToFetch='/races' tableHeadFields={tableHeadFields} renderTableData={this.renderTableData}>
-            </ListComponent>
+            <div>
+                <ListComponent urlToFetch='/races' tableHeadFields={tableHeadFields} renderTableData={this.renderTableData}>
+                </ListComponent>
+                <Container fluid id="buttoncreate">
+                    <Row>
+                        <Col>
+                            <Link to="/createRace">
+                                <Button>Create race</Button>
+                            </Link>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+            
         )
     }
 }
