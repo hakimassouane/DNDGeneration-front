@@ -11,6 +11,7 @@ import SignUpFormComponent from "../../SignUpComponents/SignUpFormComponent";
 import BackgroundFormComponent from "../../BackgroundComponents/backgroundFormComponent";
 import CharacterFormComponent from "../../CharacterComponents/CharacterComponent"
 import CharactersheetComponent from "../../CharacterComponents/CharactersheetComponent";
+import FeatFormComponent from "../../FeatComponents/featFormComponent"
 import { Route} from 'react-router-dom';
 
 
@@ -32,6 +33,7 @@ class MainComponent extends Component {
                 <Route path="/signin" component={SignInFormComponent}></Route>
                 <Route path="/createBackground" component={BackgroundFormComponent}></Route>
                 <Route path="/createCharacter" component={CharacterFormComponent}></Route>
+                <Route path="/createFeat" component={FeatFormComponent}></Route>
             </div>
           )
       }
