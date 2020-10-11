@@ -6,6 +6,10 @@ const ItemService = {
         return await Api.getInstance().get('/items');
     },
 
+    async createItem(item) {
+        return await Api.getInstance().post('/items/create', item);
+    },
+
 };
 
 export default ItemService;

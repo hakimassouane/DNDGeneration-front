@@ -14,10 +14,8 @@ import CharactersheetComponent from "../../CharacterComponents/CharactersheetCom
 import FeatFormComponent from "../../FeatComponents/featFormComponent"
 import RaceFormComponent from "../../RaceComponents/raceFormComponent"
 import ClasseFormComponenet from "../../ClassComponents/classFormComponent"
+import ItemFormComponent from "../../ItemComponents/ItemFormComponent"
 import { Route} from 'react-router-dom';
-
-
-
 
 class MainComponent extends Component {
     render() {
@@ -38,6 +36,7 @@ class MainComponent extends Component {
                 <Route path="/createFeat" component={FeatFormComponent}></Route>
                 <Route path="/createRace" component={RaceFormComponent}></Route>
                 <Route path="/createClasse" component={ClasseFormComponenet}></Route>
+                <Route path="/createItem" component={ItemFormComponent}></Route>
             </div>
           )
       }

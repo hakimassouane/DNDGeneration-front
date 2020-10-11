@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ListComponent from '../GeneralComponents/ListComponent/listComponent'
+import { Button, Row, Col, Container } from 'react-bootstrap';
+import { Link} from 'react-router-dom';
 
 class ItemListComponent extends Component {
     renderTableData(items) {
@@ -22,8 +24,20 @@ class ItemListComponent extends Component {
         const tableHeadFields = ['Name', 'Description', 'Rarity', 'Type', 'Source'];
 
         return (
-            <ListComponent urlToFetch='/items' tableHeadFields={tableHeadFields} renderTableData={this.renderTableData}>
-            </ListComponent>
+            <div>
+                <ListComponent urlToFetch='/items' tableHeadFields={tableHeadFields} renderTableData={this.renderTableData}>
+                </ListComponent>
+                <Container fluid id="buttoncreate">
+                    <Row>
+                        <Col>
+                            <Link to="/createItem">
+                                <Button>Create item</Button>
+                            </Link>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+            
         )
     }
 }
