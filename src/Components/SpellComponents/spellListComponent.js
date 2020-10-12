@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ListComponent from '../GeneralComponents/ListComponent/listComponent'
+import { Button, Row, Col, Container } from 'react-bootstrap';
+import { Link} from 'react-router-dom';
 
 class SpellListComponent extends Component {
     renderTableData(spells) {
@@ -21,8 +23,19 @@ class SpellListComponent extends Component {
         const tableHeadFields = ['Name', 'Level', 'School', 'Source', 'Page'];
 
         return (
-            <ListComponent urlToFetch='/spells' tableHeadFields={tableHeadFields} renderTableData={this.renderTableData}>
-            </ListComponent>
+            <div>
+                <ListComponent urlToFetch='/spells' tableHeadFields={tableHeadFields} renderTableData={this.renderTableData}>
+                </ListComponent>
+                <Container fluid id="buttoncreate">
+                    <Row>
+                        <Col>
+                            <Link to="/createSpell">
+                                <Button>Create spell</Button>
+                            </Link>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         )
     }
 }
