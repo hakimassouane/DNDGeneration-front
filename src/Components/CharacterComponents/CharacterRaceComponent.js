@@ -84,7 +84,7 @@ class CharacterRaceComponent extends Component {
         <Row>
           <Col>
               <Form.Group controlId="formdName">
-                  <Form.Label>Name</Form.Label>
+                  <Form.Label>Name *</Form.Label>
                   <Form.Control 
                       type="text"
                       placeholder="Character name"
@@ -98,7 +98,7 @@ class CharacterRaceComponent extends Component {
         <Row>
           <Col>
               <Form.Group controlId="formRace">
-                  <Form.Label>Select a race</Form.Label>
+                  <Form.Label>Select a race *</Form.Label>
                   <Select options={this.state.selectRaces} onChange={this.onRaceChange}/>
               </Form.Group>
           </Col>

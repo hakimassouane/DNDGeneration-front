@@ -101,37 +101,37 @@ class CharacterAbilityComponent extends Component {
           <Row>
             <Col>
               <Form.Group controlId="formStrengh">
-                  <Form.Label>Force</Form.Label>
+                  <Form.Label>Strength *</Form.Label>
                   <Select options={this.state.selectOptions} onChange={this.onStrengthChange}/>
               </Form.Group>
             </Col>
             <Col>
               <Form.Group controlId="formDexterity">
-                  <Form.Label>Dexterité</Form.Label>
+                  <Form.Label>Dexterity *</Form.Label>
                   <Select options={this.state.selectOptions} onChange={this.onDexterityChange}/>
               </Form.Group>
             </Col>
             <Col>
               <Form.Group controlId="formConstitution">
-                  <Form.Label>Constitution</Form.Label>
+                  <Form.Label>Constitution *</Form.Label>
                   <Select options={this.state.selectOptions} onChange={this.onConstitutionChange}/>
               </Form.Group>
             </Col>
             <Col>
               <Form.Group controlId="formIntelligence">
-                  <Form.Label>Intelligence</Form.Label>
+                  <Form.Label>Intelligence *</Form.Label>
                   <Select options={this.state.selectOptions} onChange={this.onIntelligenceChange}/>
               </Form.Group>
             </Col>
             <Col>
               <Form.Group controlId="formwisdom">
-                  <Form.Label>Sagesse</Form.Label>
+                  <Form.Label>Wisdom *</Form.Label>
                   <Select options={this.state.selectOptions} onChange={this.onWisdomChange}/>
               </Form.Group>
             </Col>
             <Col>
               <Form.Group controlId="formCharisme">
-                  <Form.Label>Charisme</Form.Label>
+                  <Form.Label>Charisma *</Form.Label>
                   <Select options={this.state.selectOptions} onChange={this.onCharismaChange}/>
               </Form.Group>
             </Col>
@@ -141,33 +141,33 @@ class CharacterAbilityComponent extends Component {
             <Table striped bordered hover size="sm">
               <thead>
                 <tr>
-                  <th colSpan="2">Force</th>
+                  <th colSpan="2">Strength</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Score total</td>
-                  <td></td>
+                  <td>Total score</td>
+                  <td>{this.state.strengthScore}</td>
                 </tr>
                 <tr>
-                  <td>Modificateur</td>
-                  <td></td>
+                  <td>Modifier</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Score de base</td>
-                  <td></td>
+                  <td>Base score</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Bonus racial</td>
-                  <td></td>
+                  <td>Racial bonus</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Amélioration d'abilité</td>
-                  <td></td>
+                  <td>Ability improvement</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Bonus</td>
-                  <td></td>
+                  <td>Misc bonus</td>
+                  <td>+0</td>
                 </tr>
               </tbody>
             </Table>
@@ -176,33 +176,33 @@ class CharacterAbilityComponent extends Component {
           <Table striped bordered hover size="sm">
               <thead>
                 <tr>
-                  <th colSpan="2">Dexterité</th>
+                  <th colSpan="2">Dexterity</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Score total</td>
-                  <td></td>
+                  <td>Total score</td>
+                  <td>{this.state.dexterityScore}</td>
                 </tr>
                 <tr>
-                  <td>Modificateur</td>
-                  <td></td>
+                  <td>Modifier</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Score de base</td>
-                  <td></td>
+                  <td>Base score</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Bonus racial</td>
-                  <td></td>
+                  <td>Racial bonus</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Amélioration d'abilité</td>
-                  <td></td>
+                  <td>Ability improvement</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Bonus</td>
-                  <td></td>
+                  <td>Misc bonus</td>
+                  <td>+0</td>
                 </tr>
               </tbody>
             </Table>
@@ -216,28 +216,28 @@ class CharacterAbilityComponent extends Component {
               </thead>
               <tbody>
                 <tr>
-                  <td>Score total</td>
-                  <td></td>
+                  <td>Total score</td>
+                  <td>{this.state.constitutionScore}</td>
                 </tr>
                 <tr>
-                  <td>Modificateur</td>
-                  <td></td>
+                  <td>Modifier</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Score de base</td>
-                  <td></td>
+                  <td>Base score</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Bonus racial</td>
-                  <td></td>
+                  <td>Racial bonus</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Amélioration d'abilité</td>
-                  <td></td>
+                  <td>Ability improvement</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Bonus</td>
-                  <td></td>
+                  <td>Misc bonus</td>
+                  <td>+0</td>
                 </tr>
               </tbody>
             </Table>
@@ -253,63 +253,28 @@ class CharacterAbilityComponent extends Component {
               </thead>
               <tbody>
                 <tr>
-                  <td>Score total</td>
-                  <td></td>
+                  <td>Total score</td>
+                  <td>{this.state.intelligenceScore}</td>
                 </tr>
                 <tr>
-                  <td>Modificateur</td>
-                  <td></td>
+                  <td>Modifier</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Score de base</td>
-                  <td></td>
+                  <td>Base score</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Bonus racial</td>
-                  <td></td>
+                  <td>Racial bonus</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Amélioration d'abilité</td>
-                  <td></td>
+                  <td>Ability improvement</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Bonus</td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </Table>
-            </Col>
-            <Col>
-            <Table striped bordered hover size="sm">
-              <thead>
-                <tr>
-                  <th colSpan="2">Sagesse</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Score total</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Modificateur</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Score de base</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Bonus racial</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Amélioration d'abilité</td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td>Bonus</td>
-                  <td></td>
+                  <td>Misc bonus</td>
+                  <td>+0</td>
                 </tr>
               </tbody>
             </Table>
@@ -318,33 +283,68 @@ class CharacterAbilityComponent extends Component {
             <Table striped bordered hover size="sm">
               <thead>
                 <tr>
-                  <th colSpan="2">Charisme</th>
+                  <th colSpan="2">Wisdom</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Score total</td>
-                  <td></td>
+                  <td>Total score</td>
+                  <td>{this.state.wisdomScore}</td>
                 </tr>
                 <tr>
-                  <td>Modificateur</td>
-                  <td></td>
+                  <td>Modifier</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Score de base</td>
-                  <td></td>
+                  <td>Base score</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Bonus racial</td>
-                  <td></td>
+                  <td>Racial bonus</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Amélioration d'abilité</td>
-                  <td></td>
+                  <td>Ability improvement</td>
+                  <td>+0</td>
                 </tr>
                 <tr>
-                  <td>Bonus</td>
-                  <td></td>
+                  <td>Misc bonus</td>
+                  <td>+0</td>
+                </tr>
+              </tbody>
+            </Table>
+            </Col>
+            <Col>
+            <Table striped bordered hover size="sm">
+              <thead>
+                <tr>
+                  <th colSpan="2">Charisma</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Total score</td>
+                  <td>{this.state.charismaScore}</td>
+                </tr>
+                <tr>
+                  <td>Modifier</td>
+                  <td>+0</td>
+                </tr>
+                <tr>
+                  <td>Base score</td>
+                  <td>+0</td>
+                </tr>
+                <tr>
+                  <td>Racial bonus</td>
+                  <td>+0</td>
+                </tr>
+                <tr>
+                  <td>Ability improvement</td>
+                  <td>+0</td>
+                </tr>
+                <tr>
+                  <td>Misc bonus</td>
+                  <td>+0</td>
                 </tr>
               </tbody>
             </Table>

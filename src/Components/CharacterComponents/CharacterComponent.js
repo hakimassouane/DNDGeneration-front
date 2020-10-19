@@ -104,6 +104,7 @@ class CharacterFormComponent extends Component {
 
     handleSubmit = async event => {
         event.preventDefault();
+        
         const createCharacter = {
             characterName: this.state.raceData.characterName,
             raceName: this.state.raceData.raceName,
@@ -130,20 +131,70 @@ class CharacterFormComponent extends Component {
             shieldName: this.state.equipmentData.shieldName,
             armorName: this.state.equipmentData.armorName
         }
-
-        try {
+        const alertMessage = this.verifField()
+        console.log(alertMessage)
+        if(alertMessage !== "") {
+            alert(alertMessage)
+        }
+        /*try {
             const response = await CharacterService.createCharacter(createCharacter);
             if (response.data.error) {
-                this.setState({error: response.data.error.message});
+                this.setState({error: response.data.error});
+                console.log(response.data.error)
+                alert(response.data.error)
             } else {
                 this.setState({callback: 'Your character has been create with success'})
             }
         } catch (error) {
             this.setState({error: error.message})
-        }
+        }*/
     }
 
-    render() {
+    verifField() {
+        const re =/^[0-9A-Za-z\s\-]+$/;
+        let validName = re.test(this.state.raceData.characterName);
+        let errorMessage = "";
+        console.log(this.state)
+        if(this.state.raceData.characterName === undefined || validName === false) {
+            errorMessage += "Character name is empty or no valid \n"
+        } 
+        if (this.state.raceData.raceName === undefined || this.state.raceData.raceName === "") {
+            errorMessage += "Race is empty \n"
+        }
+        if (this.state.classeData.classeName === undefined || this.state.classeData.classeName === "") {
+            errorMessage += "Classe is empty \n"
+        }
+        if (this.state.abilityData.strengthScore === undefined || this.state.abilityData.strengthScore === "") {
+            errorMessage += "Strength ability score is empty \n"
+        }
+        if (this.state.abilityData.dexterityScore === undefined || this.state.abilityData.dexterityScore === "") {
+            errorMessage += "Dexterity ability score is empty \n"
+        }
+        if (this.state.abilityData.constitutionScore === undefined || this.state.abilityData.constitutionScore === "") {
+            errorMessage += "Constitution ability score is empty \n"
+        }
+        if (this.state.abilityData.intelligenceScore === undefined ||this.state.abilityData.intelligenceScore === "") {
+            errorMessage += "Intelligence ability score is empty \n"
+        }
+        if (this.state.abilityData.wisdomScore === undefined || this.state.abilityData.wisdomScore === "") {
+            errorMessage += "Wisdom ability score is empty \n"
+        }
+        if (this.state.abilityData.charismaScore === undefined || this.state.abilityData.charismaScore === "") {
+            errorMessage += "Charisma ability score is empty \n"
+        }
+        if (this.state.descriptionData.backgroundName === undefined || this.state.descriptionData.backgroundName === "") {
+            errorMessage += "Background is empty \n"
+        }
+        if (this.state.descriptionData.alignmentName === undefined || this.state.descriptionData.alignmentName === "") {
+            errorMessage += "Background is empty \n"
+        }
+        if (this.state.equipmentData.weaponName === undefined || this.state.equipmentData.weaponName === "") {
+            errorMessage += "weapon is empty \n"
+        }
+        return errorMessage;
+    }
+
+    render() { 
         return(
             <React.Fragment>
                 <Container>

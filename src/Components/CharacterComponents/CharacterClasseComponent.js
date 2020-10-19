@@ -68,7 +68,7 @@ class CharacterClasseComponent extends Component {
       <Row>
         <Col>
             <Form.Group controlId="formClasse">
-                <Form.Label>Select a classe</Form.Label>
+                <Form.Label>Select a classe *</Form.Label>
                 <Select options={this.state.selectClasses} onChange={this.onClasseChange}/>
             </Form.Group>
         </Col>

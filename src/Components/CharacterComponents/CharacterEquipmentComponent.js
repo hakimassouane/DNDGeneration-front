@@ -109,7 +109,7 @@ class CharacterEquipmentComponent extends Component {
         <Row>
           <Col>
               <Form.Group controlId="formweapon">
-                  <Form.Label>Select a weapon</Form.Label>
+                  <Form.Label>Select a weapon *</Form.Label>
                   <Select options={this.state.selectWeapon} onChange={this.onWeaponChange}/>
               </Form.Group>
           </Col>
