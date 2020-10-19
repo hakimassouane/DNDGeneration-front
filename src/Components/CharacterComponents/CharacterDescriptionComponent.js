@@ -107,7 +107,10 @@ class CharacterDescriptionComponent extends Component {
             <Col>
                 <Form.Group controlId="formBackground">
                     <Form.Label>Select a background *</Form.Label>
-                    <Select options={this.state.selectBackgrounds} onChange={this.onBackgroundChange}/>
+                    <Select
+                        value={this.state.selectBackgrounds.find(obj => obj.value === this.state.backgroundName)}
+                        options={this.state.selectBackgrounds}
+                        onChange={this.onBackgroundChange}/>
                 </Form.Group>
             </Col>
             </Row>
@@ -115,7 +118,10 @@ class CharacterDescriptionComponent extends Component {
                 <Col>
                     <Form.Group controlId="formAlignment">
                         <Form.Label>Select a alignment *</Form.Label>
-                        <Select options={this.state.selectAlignments} onChange={this.onAlignmentChange}/>
+                        <Select
+                            value={this.state.selectAlignments.find(obj => obj.value === this.state.alignmentName)}
+                            options={this.state.selectAlignments}
+                            onChange={this.onAlignmentChange}/>
                     </Form.Group>
                 </Col>
             </Row>

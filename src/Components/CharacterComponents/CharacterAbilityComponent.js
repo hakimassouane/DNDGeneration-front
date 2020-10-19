@@ -102,37 +102,55 @@ class CharacterAbilityComponent extends Component {
             <Col>
               <Form.Group controlId="formStrengh">
                   <Form.Label>Strength *</Form.Label>
-                  <Select options={this.state.selectOptions} onChange={this.onStrengthChange}/>
+                  <Select
+                    value={this.state.selectOptions.find(obj => obj.value === this.state.strengthScore)}
+                    options={this.state.selectOptions}
+                    onChange={this.onStrengthChange}/>
               </Form.Group>
             </Col>
             <Col>
               <Form.Group controlId="formDexterity">
                   <Form.Label>Dexterity *</Form.Label>
-                  <Select options={this.state.selectOptions} onChange={this.onDexterityChange}/>
+                  <Select
+                    value={this.state.selectOptions.find(obj => obj.value === this.state.dexterityScore)}
+                    options={this.state.selectOptions}
+                    onChange={this.onDexterityChange}/>
               </Form.Group>
             </Col>
             <Col>
               <Form.Group controlId="formConstitution">
                   <Form.Label>Constitution *</Form.Label>
-                  <Select options={this.state.selectOptions} onChange={this.onConstitutionChange}/>
+                  <Select
+                    value={this.state.selectOptions.find(obj => obj.value === this.state.constitutionScore)}
+                    options={this.state.selectOptions}
+                    onChange={this.onConstitutionChange}/>
               </Form.Group>
             </Col>
             <Col>
               <Form.Group controlId="formIntelligence">
                   <Form.Label>Intelligence *</Form.Label>
-                  <Select options={this.state.selectOptions} onChange={this.onIntelligenceChange}/>
+                  <Select
+                    value={this.state.selectOptions.find(obj => obj.value === this.state.intelligenceScore)}
+                    options={this.state.selectOptions}
+                    onChange={this.onIntelligenceChange}/>
               </Form.Group>
             </Col>
             <Col>
               <Form.Group controlId="formwisdom">
                   <Form.Label>Wisdom *</Form.Label>
-                  <Select options={this.state.selectOptions} onChange={this.onWisdomChange}/>
+                  <Select
+                    value={this.state.selectOptions.find(obj => obj.value === this.state.wisdomScore)}
+                    options={this.state.selectOptions}
+                    onChange={this.onWisdomChange}/>
               </Form.Group>
             </Col>
             <Col>
               <Form.Group controlId="formCharisme">
                   <Form.Label>Charisma *</Form.Label>
-                  <Select options={this.state.selectOptions} onChange={this.onCharismaChange}/>
+                  <Select
+                    value={this.state.selectOptions.find(obj => obj.value === this.state.charismaScore)}
+                    options={this.state.selectOptions}
+                    onChange={this.onCharismaChange}/>
               </Form.Group>
             </Col>
           </Row>

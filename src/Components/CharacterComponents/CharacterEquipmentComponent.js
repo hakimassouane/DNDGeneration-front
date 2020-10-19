@@ -110,19 +110,28 @@ class CharacterEquipmentComponent extends Component {
           <Col>
               <Form.Group controlId="formweapon">
                   <Form.Label>Select a weapon *</Form.Label>
-                  <Select options={this.state.selectWeapon} onChange={this.onWeaponChange}/>
+                  <Select
+                    value={this.state.selectWeapon.find(obj => obj.value === this.state.weaponName)}
+                    options={this.state.selectWeapon}
+                    onChange={this.onWeaponChange}/>
               </Form.Group>
           </Col>
           <Col>
               <Form.Group controlId="formshield">
                   <Form.Label>Select a shield</Form.Label>
-                  <Select options={this.state.selectShield} onChange={this.onShieldChange}/>
+                  <Select
+                    value={this.state.selectShield.find(obj => obj.value === this.state.shieldName)}
+                    options={this.state.selectShield}
+                    onChange={this.onShieldChange}/>
               </Form.Group>
           </Col>
           <Col>
               <Form.Group controlId="formarmor">
                   <Form.Label>Select a armor</Form.Label>
-                  <Select options={this.state.selectArmor} onChange={this.onArmorChange}/>
+                  <Select
+                    value={this.state.selectArmor.find(obj => obj.value === this.state.armorName)}
+                    options={this.state.selectArmor}
+                    onChange={this.onArmorChange}/>
               </Form.Group>
           </Col>
         </Row>

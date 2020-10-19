@@ -99,7 +99,10 @@ class CharacterRaceComponent extends Component {
           <Col>
               <Form.Group controlId="formRace">
                   <Form.Label>Select a race *</Form.Label>
-                  <Select options={this.state.selectRaces} onChange={this.onRaceChange}/>
+                  <Select
+                    value={this.state.selectRaces.find(obj => obj.value === this.state.raceName)}
+                    options={this.state.selectRaces}
+                    onChange={this.onRaceChange}/>
               </Form.Group>
           </Col>
         </Row>

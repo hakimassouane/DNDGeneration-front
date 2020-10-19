@@ -132,22 +132,21 @@ class CharacterFormComponent extends Component {
             armorName: this.state.equipmentData.armorName
         }
         const alertMessage = this.verifField()
-        console.log(alertMessage)
         if(alertMessage !== "") {
             alert(alertMessage)
-        }
-        /*try {
-            const response = await CharacterService.createCharacter(createCharacter);
-            if (response.data.error) {
-                this.setState({error: response.data.error});
-                console.log(response.data.error)
-                alert(response.data.error)
-            } else {
-                this.setState({callback: 'Your character has been create with success'})
+        } else {
+            try {
+                const response = await CharacterService.createCharacter(createCharacter);
+                if (response.data.error) {
+                    this.setState({error: response.data.error});
+                } else {
+                    this.setState({callback: 'Your character has been create with success'})
+                }
+            } catch (error) {
+                this.setState({error: error.message})
             }
-        } catch (error) {
-            this.setState({error: error.message})
-        }*/
+        }
+        
     }
 
     verifField() {
